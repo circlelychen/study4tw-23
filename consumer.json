@@ -1,0 +1,8 @@
+{
+    "username": "study4tw",
+    "plugins": {
+        "key-auth": {
+            "key": "auth-one"
+        }
+    }
+}

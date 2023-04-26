@@ -1,0 +1,19 @@
+{
+    "methods": ["GET"],
+    "uri": "/grpctest",
+    "plugins": {
+        "key-auth": {},
+        "grpc-transcode": {
+            "proto_id": "1",
+            "service": "helloworld.Greeter",
+            "method": "SayHello"
+        }
+    },
+    "upstream": {
+        "scheme": "grpc",
+        "type": "roundrobin",
+        "nodes": {
+            "grpc-hello-svc.grpc:50051": 1
+        }
+    }
+}
