@@ -1,5 +1,5 @@
 # study4tw-23
-A simple demo for Apache APISIX sharing
+A simple demo for Apache APISIX sharing based on [https://github.com/api7/grpc_server_example](https://github.com/api7/grpc_server_example)
 
 
 ### 1. Create Namespace
@@ -16,7 +16,7 @@ $> kubectl apply -f grpc-service.yaml -n grpc
 ### 3. Export gRPC port and test it
 ~~~bash
 $> kubectl port-forward service/grpc-hello-svc 50051:50051 -n grpc
-$> grpcurl -d '{"name": "zhangsan"}' -plaintext 127.0.0.1:50051 helloworld.Greeter.SayHello
+$> grpcurl -d '{"name": "study4tw"}' -plaintext 127.0.0.1:50051 helloworld.Greeter.SayHello
 ~~~
 
 ### 4. Deploy Apache APISIX
@@ -41,3 +41,4 @@ $> curl http://127.0.0.1:9180/apisix/admin/routes/1 -H 'X-API-KEY: edd1c9f034335
 $>
 $> curl -i -H 'apikey: auth-one' http://127.0.0.1:8080/grpctest\?name=world
 ~~~
+o
